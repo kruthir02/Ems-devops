@@ -13,18 +13,20 @@ if (!isset($errors)) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> Booking Form</title>
+        <title>Booking Form</title>
         <style>
             span.error{
                 color: red;
-            }            
+            }          
         </style>  
         <?php require 'utils/styles.php'; ?><!--css links. file found in utils folder-->
         <?php require 'utils/scripts.php'; ?><!--js links. file found in utils folder-->
     </head>
     <body>
         <?php require 'utils/header.php'; ?><!--header content. file found in utils folder-->
+        <div style="background-image: url('images/Book_img1.png');"> 
         <div class="content">
+        
             <div class="container">
                 <h1> Booking Form</h1><!--form title-->
                 <?php 
@@ -32,6 +34,7 @@ if (!isset($errors)) {
                     echo '<p>Error: ' . $errorMessage . '</p>';
                 }
                 ?>
+                
                 <form action="addBooking.php" method="POST" class="form-horizontal">
                     <div class="form-group">
                         <label for="FullName" class="col-md-2 control-label">FullName</label>
@@ -134,9 +137,13 @@ if (!isset($errors)) {
                     </div>
                 <button type="submit" name="addBooking" class="btn btn-default pull-right">Book Now <span class="glyphicon glyphicon-send"></span></button>
                 </form>
+                
                 <a class="btn btn-default" href="viewBookings.php"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a><!--return/back button-->
             </div>
+            
+        </div>
         </div>
         <?php require 'utils/footer.php'; ?><!--footer content. file found in utils folder-->
+        
     </body>
 </html>
