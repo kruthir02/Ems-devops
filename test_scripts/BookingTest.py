@@ -4,11 +4,10 @@ def test_for_booking():
     try:
         driver = webdriver.Chrome(r"D:\chrome driver\chromedriver_win32\chromedriver.exe")
         driver.get('http://localhost/EMS-main/index.php')
-        sleep(3)
+        driver.maximize_window()
+        sleep(2)
         login_xpath = "/html/body/header/nav/div/ul/button"
-
-
-        sleep(3)
+        sleep(2)
         login_button = driver.find_element_by_xpath(login_xpath)
         login_button_text = 'Login'
         assert login_button_text == login_button.text
@@ -34,25 +33,36 @@ def test_for_booking():
         assert Book_an_event_text == Book_an_event_button.text
         Book_an_event_button.click()
         driver.find_element_by_name('FullName').send_keys('Manasa B Reddy')
+        sleep(1)
         driver.find_element_by_name('Username').send_keys('Manasa')
+        sleep(1)
         driver.find_element_by_name('Email').send_keys('pass2@gmail.com')
+        sleep(1)
         driver.find_element_by_name('Events').send_keys('Birthday')
+        sleep(1)
         driver.find_element_by_name('Venue').send_keys('white nirvana')
+        sleep(1)
         driver.find_element_by_name('EventDate').send_keys('28-03-2022')
+        sleep(1)
         driver.find_element_by_name('NoOfHeads').send_keys('50')
+        sleep(1)
         driver.find_element_by_name('Decoration').send_keys('Balloon')
+        sleep(1)
         driver.find_element_by_name('FoodStyle').send_keys('South Indian')
+        sleep(1)
 
 
         Book_now_xpath = "/html/body/div/div/form/button"
         Book_now_button = driver.find_element_by_xpath(Book_now_xpath)
         Book_now_button.click()
+        sleep(1)
 
         Bookings_xpath = "/html/body/ul/li[6]/a"
         Bookings_button = driver.find_element_by_xpath(Bookings_xpath)
         Bookings_text = 'Bookings'
         assert Bookings_text == Bookings_button.text
         Bookings_button.click()
+        sleep(1)
 
     finally:
         driver.close()

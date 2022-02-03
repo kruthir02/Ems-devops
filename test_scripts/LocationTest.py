@@ -5,7 +5,8 @@ from time import sleep
 def test_locations():
     driver = webdriver.Chrome(r"D:\chrome driver\chromedriver_win32\chromedriver.exe")
     driver.get('http://localhost/EMS-main/index.php')
-    sleep(3)
+    driver.window_maximize()
+    sleep(2)
     about_xpath = '/html/body/header/nav/div/ul/li[2]/a'
     about_text = 'Locations'
     about_menu = driver.find_element_by_xpath(about_xpath)

@@ -6,6 +6,7 @@ def test_for_feedback():
     try:
         driver = webdriver.Chrome(r"D:\chrome driver\chromedriver_win32\chromedriver.exe")
         driver.get('http://localhost/EMS-main/index.php')
+        driver.window_maximize()
         sleep(3)
         login_xpath = "/html/body/header/nav/div/ul/button"
 
@@ -38,18 +39,23 @@ def test_for_feedback():
         Add_review_button.click()
 
         driver.find_element_by_name('Username').send_keys('Manasa B Reddy')
+        sleep(1)
         driver.find_element_by_name('Rev').send_keys('5')
+        sleep(1)
         driver.find_element_by_name('Comment').send_keys('Good Service')
+        sleep(1)
 
         Add_feedback_xpath = "/html/body/div/div/form/button"
         Add_feedback_button = driver.find_element_by_xpath(Add_feedback_xpath)
         Add_feedback_button.click()
+        sleep(1)
 
         Review_xpath = "/html/body/ul/li[7]/a"
         Review_button = driver.find_element_by_xpath(Review_xpath)
         Review_text = 'Reviews'
         assert Review_text == Review_button.text
         Review_button.click()
+        sleep(1)
 
 
 

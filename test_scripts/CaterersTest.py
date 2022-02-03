@@ -5,6 +5,7 @@ from time import sleep
 def test_Caterers():
     driver = webdriver.Chrome(r"D:\chrome driver\chromedriver_win32\chromedriver.exe")
     driver.get('http://localhost/EMS-main/index.php')
+    driver.window_maximize()
     sleep(3)
     about_xpath = '/html/body/header/nav/div/ul/li[4]/a'
     about_text = 'Caterers'
